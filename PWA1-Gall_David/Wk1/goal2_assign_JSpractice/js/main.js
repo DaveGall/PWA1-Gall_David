@@ -99,9 +99,10 @@ Assignment: Functions Worksheet
 
     //--------------------------------------------------------
     console.log("5. how many vowels in a word");
-         var vowels = "a,e,i,o,u,A,E,I,O,U";
-    var vowelsInWord = function(vowels){
 
+    var vowelsInWord = function(str1){
+     var str1= ("|"+str1+"|").split(/[aeiou]/i).length-1;
+        return str1;
     };
 
         //PUT FUNCTION HERE
