@@ -76,7 +76,10 @@ Assignment: Functions Worksheet
     //--------------------------------------------------------
     console.log("3. word count");
     var ipsum = "this is test text that is being used as input to a function";
-     var wordCount = function(ipsum){
+    var wordCount = function(ipsum) {
+        return ipsum.split(/\s+/).length;
+    };
+
 
         //PUT FUNCTION HERE
 
@@ -96,6 +99,10 @@ Assignment: Functions Worksheet
 
     //--------------------------------------------------------
     console.log("5. how many vowels in a word");
+         var vowels = "a,e,i,o,u,A,E,I,O,U";
+    var vowelsInWord = function(vowels){
+
+    };
 
         //PUT FUNCTION HERE
 
