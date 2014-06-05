@@ -50,10 +50,14 @@ Assignment: Functions Worksheet
      ********************************************/
 
     console.log('------ Goal2: Assignment: JavaScript Practice ----------');
-
+    
     console.log("1. avg of an array of numbers");
     var avgNumbers = function(arr){
-        
+        var result = 0;
+        for(var i = 0; i < arr.length; i += 1){
+            result += arr[i] / arr.length;
+        }
+        return result;
     };
 
 
@@ -71,8 +75,10 @@ Assignment: Functions Worksheet
 
     //--------------------------------------------------------
     console.log("3. word count");
-    var ipsum = "this is test text that is being used as input to a function"
-
+    var ipsum = "this is test text that is being used as input to a function";
+     var wordCount = function(ipsum){
+       wordCount = ipsum
+     };
         //PUT FUNCTION HERE
 
     console.log(wordCount(ipsum));
