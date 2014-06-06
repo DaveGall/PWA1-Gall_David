@@ -12,7 +12,7 @@
 	var validqte == function(query){ //misspelled variable, validate is the correct spelling. Also instead of a single assignment operator there is a double equals to compare two values.
 		
 		// Trim whitespace from start and end of search query
-		while(query.charAt(0) = " "){
+		while(query.charAt(0) = " "){ //The = operator should be a == to show comparison not an assignment.
 			query = query.substring(1, query.length);
 		};
 		while(query.charAt(query.length-1) === ""){
@@ -21,7 +21,7 @@
 		
 		// Check search length, must have 3 characters
 		if(query.length < 3){
-			alert("Your search query is too small, try again.);
+			alert("Your search query is too small, try again."); //This line was missing a closing quotation.
 			
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
 			searchInput.focus();
