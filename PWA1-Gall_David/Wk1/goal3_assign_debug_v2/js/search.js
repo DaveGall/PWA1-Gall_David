@@ -15,9 +15,9 @@
 		while(query.charAt(0) == " "){ //The = operator should be a == to show comparison not an assignment.
 			query = query.substring(1, query.length);
 		};
-		while(query.charAt(query.length-1) === ""){
-			query = query.substring(0, query.length-1);
-		;
+		while(query.charAt(query.length-1) === "") {
+            query = query.substring(0, query.length - 1);
+        };// Closing bracket missing for this while statement.
 		
 		// Check search length, must have 3 characters
 		if(query.length < 3){
