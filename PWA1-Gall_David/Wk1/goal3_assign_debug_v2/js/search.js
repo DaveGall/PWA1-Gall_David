@@ -33,10 +33,10 @@
 	
 	// Finds search matches
 	var search = function(query){ //Missing bracket after the function parameter.
-		
+
 		// split the user's search query string into an array
-		var queryArray = query.join(" ");
-		
+		var queryArray = query.split(",");//To change query to an array you need to use .split.
+
 		// array to store matched results from database.js
 		var results = [];
 
@@ -63,9 +63,9 @@
             } //Missing closing bracket to close off the for loop.
 
         };//Missing closing bracket to close off the function.
-		
+
 		results.sort();
-		
+
 		// Check that matches were found, and run output functions
 		if(results.length = 0){
 			noMatch();
