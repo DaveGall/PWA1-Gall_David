@@ -15,7 +15,7 @@
 			query = query.substring(1, query.length);//Should be 0  query.length.
 		};
 		while(query.charAt(query.length(-1)) === "") {//Added an opening parenthesis for the query length and a closing parenthesis for query.charAt.
-            query = query.substring(0, query.length - 1);
+            query = query.substring(0, query.length - 1);//This gets the length of the input into the search query bar.
         };// Closing bracket missing for this while statement.
 		
 		// Check search length, must have 3 characters
