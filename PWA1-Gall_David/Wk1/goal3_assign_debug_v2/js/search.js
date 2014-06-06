@@ -1,5 +1,4 @@
-// Create privatized scope using a self-executing function
-//David Gall, 06/06/2014, Assignment Analyze Buggy Search Engine.
+//David Gall, 06/06/2014, Assignment Debugging Search Engine.
 (function(){
 	
 	// Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
@@ -35,7 +34,7 @@
 	var search = function(query){ //Missing bracket after the function parameter.
 
 		// split the user's search query string into an array
-		var queryArray = query.split(",");//To change query to an array you need to use .split.
+		var queryArray = query.join("");//To change query to an array you need to use .split.
 
 		// array to store matched results from database.js
 		var results = [];
@@ -46,7 +45,7 @@
             // each db[i] is a single video item, each title ends with a pipe "|"
             // save a lowercase variable of the video title
             var dbTitleEnd = db[i].indexOf('|');
-            var dbitem = db[i].tolowercase().substring(0, dbTitleEnd);
+            var dbitem = db[i].tolowercase().substring(0, dbTitleEnd); // variable needs to be written in camel Case. dbItem.
 
             // loop through the user's search query words
             // save a lowercase variable of the search keyword
@@ -55,7 +54,7 @@
 
                 // is the keyword anywhere in the video title?
                 // If a match is found, push full db[i] into results array
-                var compare = dbitem.indexOf(qitem);
+                var compare = dbitem.indexOf(qitem);//dbItem should be written in camelCase like the variable.
                 if (compare !== -1) {
                     results.push(db[i]);
                 }
