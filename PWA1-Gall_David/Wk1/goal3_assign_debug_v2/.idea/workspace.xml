@@ -26,11 +26,11 @@
       <file leaf-file-name="search.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/search.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7818182" vertical-offset="1110" max-vertical-offset="1935">
-              <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.8545455" vertical-offset="1110" max-vertical-offset="1935">
+              <caret line="120" column="52" selection-start-line="120" selection-start-column="52" selection-end-line="120" selection-end-column="52" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1402094210000" expanded="false" signature="2785:2800" placeholder="..." />
+                <marker date="1402094375000" expanded="false" signature="2785:2800" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -235,11 +235,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/search.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7818182" vertical-offset="1110" max-vertical-offset="1935">
-          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.8545455" vertical-offset="1110" max-vertical-offset="1935">
+          <caret line="120" column="52" selection-start-line="120" selection-start-column="52" selection-end-line="120" selection-end-column="52" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1402094210000" expanded="false" signature="2785:2800" placeholder="..." />
+            <marker date="1402094375000" expanded="false" signature="2785:2800" placeholder="..." />
           </folding>
         </state>
       </provider>

@@ -111,13 +111,13 @@
 	
 	// The onsubmit event will be reviewed in upcoming Course Material.
 	// THE LINE DIRECTLY BELOW IS CORRECT
-	document.forms[0].onsubmit = function(){
-		var query = searchInput.value;
-		validate(query);//Another misspelling of validate.
+	document.forms[0].onsubmit = function() {
+        var query = searchInput.value;
+        validate(query);//Another misspelling of validate.
 
         // return false is needed for most events - this will be reviewed in upcoming course material
         // THE LINE DIRECTLY BELOW IS CORRECT
-		return false;
-	;
+        return false;
+    };//Closing bracket of the function was missing.
 
 })();
