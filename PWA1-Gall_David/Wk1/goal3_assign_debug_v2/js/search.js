@@ -12,7 +12,7 @@
 		
 		// Trim whitespace from start and end of search query
 		while(query.charAt(0) == " "){ //The = operator should be a == to show comparison not an assignment.
-			query = query.substring(1, query.length);//Should be query.length, 0 not 1, query.length.
+			query = query.substring(1, query.length);//Should be 0  query.length.
 		};
 		while(query.charAt(query.length(-1)) === "") {//Added an opening parenthesis for the query length and a closing parenthesis for query.charAt.
             query = query.substring(0, query.length - 1);
@@ -24,7 +24,7 @@
 			
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
 			searchInput.focus();
-			return;
+			return;//Should return currentSearch variable.
 		};
 		
 		search(query);
