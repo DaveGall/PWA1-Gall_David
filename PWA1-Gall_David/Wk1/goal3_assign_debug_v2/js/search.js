@@ -9,10 +9,10 @@
 	;
 	
 	// Validates search query
-	var validqte == function(query){ //misspelled variable, validate is the correct spelling. Also instead of a single assignment operator there is a double equals to compare two values.
+	var validate = function(query){ //misspelled variable, validate is the correct spelling. Also instead of a single assignment operator there is a double equals to compare two values.
 		
 		// Trim whitespace from start and end of search query
-		while(query.charAt(0) = " "){ //The = operator should be a == to show comparison not an assignment.
+		while(query.charAt(0) == " "){ //The = operator should be a == to show comparison not an assignment.
 			query = query.substring(1, query.length);
 		};
 		while(query.charAt(query.length-1) === ""){
@@ -32,7 +32,7 @@
 	};
 	
 	// Finds search matches
-	var search = function(query)
+	var search = function(query){ //Missing bracket after the function parameter.
 		
 		// split the user's search query string into an array
 		var queryArray = query.join(" ");
@@ -41,26 +41,28 @@
 		var results = [];
 
 		// loop through each index of db array
-		for(var i=0, j=db.length; i<j; i++){
-		
-			// each db[i] is a single video item, each title ends with a pipe "|"
-			// save a lowercase variable of the video title
-			var dbTitleEnd = db[i].indexOf('|');
-			var dbitem = db[i].tolowercase().substring(0, dbTitleEnd);
-			
-			// loop through the user's search query words
-			// save a lowercase variable of the search keyword
-			for(var ii=0, jj=queryArray.length; ii<jj; ii++){
-				var qitem = queryArray[ii].tolowercase();
-				
-				// is the keyword anywhere in the video title?
-				// If a match is found, push full db[i] into results array
-				var compare = dbitem.indexOf(qitem);
-				if(compare !== -1){
-					results.push(db[i]);
-				};
-			;
-		;
+		for(var i=0, j=db.length; i<j; i++) {
+
+            // each db[i] is a single video item, each title ends with a pipe "|"
+            // save a lowercase variable of the video title
+            var dbTitleEnd = db[i].indexOf('|');
+            var dbitem = db[i].tolowercase().substring(0, dbTitleEnd);
+
+            // loop through the user's search query words
+            // save a lowercase variable of the search keyword
+            for (var ii = 0, jj = queryArray.length; ii < jj; ii++) {
+                var qitem = queryArray[ii].tolowercase();
+
+                // is the keyword anywhere in the video title?
+                // If a match is found, push full db[i] into results array
+                var compare = dbitem.indexOf(qitem);
+                if (compare !== -1) {
+                    results.push(db[i]);
+                }
+                ;
+            } //Missing closing bracket to close off the for loop.
+
+        };//Missing closing bracket to close off the function.
 		
 		results.sort();
 		
