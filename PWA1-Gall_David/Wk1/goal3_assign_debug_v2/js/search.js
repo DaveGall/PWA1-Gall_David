@@ -12,7 +12,7 @@
 		
 		// Trim whitespace from start and end of search query
 		while(query.charAt(0) == " "){ //The = operator should be a == to show comparison not an assignment.
-			query = query.substring(1, query.length);
+			query = query.substring(1, query.length);//Should be query.length, 0 not 1, query.length.
 		};
 		while(query.charAt(query.length-1) === "") {
             query = query.substring(0, query.length - 1);
