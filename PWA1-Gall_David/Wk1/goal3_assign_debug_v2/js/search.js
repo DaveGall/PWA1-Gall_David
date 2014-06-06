@@ -19,8 +19,8 @@
         };// Closing bracket missing for this while statement.
 		
 		// Check search length, must have 3 characters
-		if(query.length < 3){
-			alert("Your search query is too small, try again."); //This line was missing a closing quotation.
+		if(query.length < 3){ //Part that checks to see if the input is at least 3 characters.
+			alert("Your search query is too small, try again."); //This line was missing a closing quotation. Displays if search doesn't match the criteria.
 			
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
 			searchInput.focus();
