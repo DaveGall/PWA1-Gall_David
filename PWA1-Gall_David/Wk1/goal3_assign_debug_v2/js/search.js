@@ -76,10 +76,10 @@
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
 	var noMatch = function(){//If you don't type in java or javascript this function will run.
 		var html = ''+
-			'<p>No Results found.</p>'+
+			'<p>No Results found.</p>'+//These two lines display if the result is an empty string or not the words javascript.
 			'<p style="font-size:10px;">Try searching for "JavaScript".  Just an idea.</p>'
 		;
-		resultsDIV.innerHTML = html;
+		resultsDIV.innerHTML = html;//Pulls files from the database.
 	};
 	
 	// Put matches into page as paragraphs with anchors
@@ -96,14 +96,14 @@
 		
 			// title of video ends with pipe
 			// pull the title's string using index numbers
-			titleEnd = results[i].indexOf('|');
-			title = results[i].subString(0, titleEnd);
+			titleEnd = results[i].indexOf('|');//Will look for all the | in the array
+			title = results[i].subString(0, titleEnd);//After executing the above code this will display each title result separately.
 			
 			// pull the video url after the title
 			url = results[i].substring(results[i].indexOf('|')+1, results[i].length);
 			
 			// make the video link - THE NEXT LINE IS CORRECT.
-			html += '<p><a href=' + url + '>' + title + '</a></p>';
+			html += '<p><a href=' + url + '>' + title + '</a></p>';//Clickable link from the results.
 		};
 		resultsDIV.innerHTML = html; //THIS LINE IS CORRECT.
 	};
