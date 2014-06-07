@@ -59,4 +59,4 @@
     console.log("program starts here");
     fight();
 
-})();
+})();//End of program.
