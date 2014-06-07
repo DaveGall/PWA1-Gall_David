@@ -22,39 +22,39 @@
            var minDamage1 = player1Damage * .5;//Variable equation for the damage to each player.
            var minDamage2 = player2Damage * .5;//Variable equation for the damage to each player.
 
-           var f1 = Math.floor(Math.random()*(player1Damage-minDamage1)+minDamage1);
-           var f2 = Math.floor(Math.random()*(player2Damage-minDamage2)+minDamage2);
+           var f1 = Math.floor(Math.random()*(player1Damage-minDamage1)+minDamage1);//Variable to determine a random number to subtract from each player at the end of each round.
+           var f2 = Math.floor(Math.random()*(player2Damage-minDamage2)+minDamage2);//Variable to determine a random number to subtract from each player at the end of each round.
 
-           playerOneHealth-=f1;
-           playerTwoHealth-=f2;
-           console.log(playerOneName+":"+playerOneHealth+" "+playerTwoName+":"+playerTwoHealth);
+           playerOneHealth-=f1;//This subtracts the players health by the amount of damage from the prior variables.
+           playerTwoHealth-=f2;//This subtracts the players health by the amount of damage from the prior variables.
+           console.log(playerOneName+":"+playerOneHealth+" "+playerTwoName+":"+playerTwoHealth);//This was a print out to see if the code was giving us the results we were looking for.
 
-           var results = winnerCheck();
+           var results = winnerCheck();//This is a variable that will check to see if there is a winner after each round.
            console.log(results);
 
-           if(results === "no winner"){
-               round++;
-               alert(playerOneName+":"+playerOneHealth+" *ROUND "+round+" OVER* "+playerTwoName+":"+playerTwoHealth);
+           if(results === "no winner"){//If this condition is true then it will run the next line
+               round++;//This will progress the fight another round
+               alert(playerOneName+":"+playerOneHealth+" *ROUND "+round+" OVER* "+playerTwoName+":"+playerTwoHealth);//Displays the results after each round.
 
-           }else{
-               alert(results);
-               break;
+           }else{//This else statement will display the results once the if statement is false and there is a winner.
+               alert(results);//Will display the results
+               break;//stops the code from running once there is a winner.
            };
        };
     };
 
-    function winnerCheck(){
+    function winnerCheck(){//This code is to determine the parameters of how a winner is crowned.
         console.log("in winnerCheck FN");
-        var result = "no winner";
+        var result = "no winner";//Variable to display the results of this function
 
-        if(playerOneHealth < 1 && playerTwoHealth < 1){
-            result = "You both die";
-        }else if(playerOneHealth < 1){
-            result = playerTwoName+" WINS!!!";
-        }else if(playerTwoHealth < 1){
-            result = playerOneName+" WINS!!!";
+        if(playerOneHealth < 1 && playerTwoHealth < 1){//If this condition is true then the following result will display.
+            result = "You both die";//Display if above code is true
+        }else if(playerOneHealth < 1){//If this condition is true then the code below will display
+            result = playerTwoName+" WINS!!!";//Code to display if the results of the above condition are true.
+        }else if(playerTwoHealth < 1){//Condition to check to see if all the other conditions returned false then this will display.
+            result = playerOneName+" WINS!!!";//Code that displays if the above statement is true.
         }
-        return result;
+        return result;//Returns a value for the results of the function.
     };
     console.log("program starts here");
     fight();
