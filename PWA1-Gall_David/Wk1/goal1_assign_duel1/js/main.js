@@ -11,7 +11,7 @@
     var playerOneHealth = 100;
     var playerTwoHealth = 100;
 
-    var round = 1;
+    var round = 0;
 
     function fight(){
        console.log("In the fight function");
@@ -27,11 +27,35 @@
 
            playerOneHealth-=f1;
            playerTwoHealth-=f2;
+           console.log(playerOneName+":"+playerOneHealth+" "+playerTwoName+":"+playerTwoHealth);
 
+           var results = winnerCheck();
+           console.log(results);
+
+           if(results === "no winner"){
+               round++;
+               alert(playerOneName+":"+playerOneHealth+" *ROUND "+round+" OVER* "+playerTwoName+":"+playerTwoHealth);
+
+           }else{
+               alert(results);
+               break;
+           };
        };
     };
 
-    function winnerCheck(){};
+    function winnerCheck(){
+        console.log("in winnerCheck FN");
+        var result = "no winner";
+
+        if(playerOneHealth < 1 && playerTwoHealth < 1){
+            result = "You both die";
+        }else if(playerOneHealth < 1){
+            result = playerTwoName+" WINS!!!";
+        }else if(playerTwoHealth < 1){
+            result = playerOneName+" WINS!!!";
+        }
+        return result;
+    };
     console.log("program starts here");
     fight();
 
