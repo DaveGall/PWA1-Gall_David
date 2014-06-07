@@ -34,7 +34,7 @@
 	var search = function(query){ //Missing bracket after the function parameter.
 
 		// split the user's search query string into an array
-		var queryArray = query.join("");//To change query to an array you need to use .split.
+		var queryArray = query.join("");//To change query to an array you need to use .split. Join makes an array a string.
 
 		// array to store matched results from database.js
 		var results = [];
@@ -44,13 +44,13 @@
 
             // each db[i] is a single video item, each title ends with a pipe "|"
             // save a lowercase variable of the video title
-            var dbTitleEnd = db[i].indexOf('|');
-            var dbitem = db[i].tolowercase().substring(0, dbTitleEnd); // variable needs to be written in camel Case. dbItem.
+            var dbTitleEnd = db[i].indexOf('|');//Grabs each title separately.
+            var dbitem = db[i].tolowercase().substring(0, dbTitleEnd); // variable needs to be written in camel Case. dbItem. Changes all characters to lowercase.
 
             // loop through the user's search query words
             // save a lowercase variable of the search keyword
-            for (var ii = 0, jj = queryArray.length; ii < jj; ii++) {
-                var qitem = queryArray[ii].tolowercase();
+            for (var ii = 0, jj = queryArray.length; ii < jj; ii++) { //Conditions to use for searching the input letters.
+                var qitem = queryArray[ii].tolowercase();//qitem should be written in camelCase. Each input letter is changed to a lowercase.
 
                 // is the keyword anywhere in the video title?
                 // If a match is found, push full db[i] into results array
@@ -58,23 +58,23 @@
                 if (compare !== -1) {
                     results.push(db[i]);
                 }
-                ;
+
             } //Missing closing bracket to close off the for loop.
 
         };//Missing closing bracket to close off the function.
 
-		results.sort();
+		results.sort();//Sorts the order of the array of results from the search.
 
 		// Check that matches were found, and run output functions
-		if(results.length = 0){
-			noMatch();
+		if(results.length = 0){ //Does not need an assignment operator of = it should be ==
+			noMatch();//Displays if true and the input equals 0.
 		}else{
-			showMatches(results);
+			showMatches(results);//This will display results of your search.
 		};
 	};
 	
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
-	var noMatch = function(){
+	var noMatch = function(){//If you don't type in java or javascript this function will run.
 		var html = ''+
 			'<p>No Results found.</p>'+
 			'<p style="font-size:10px;">Try searching for "JavaScript".  Just an idea.</p>'
@@ -86,7 +86,7 @@
 	var showMatches = function(results){
 		
 		// THE NEXT 4 LINES ARE CORRECT.
-		var html = '<p>Results</p>', 
+		var html = '<p>Results</p>',//This section of code displays when the input matches java or javascript.
 			title, 
 			url
 		;
