@@ -2,7 +2,7 @@
 (function(){
 	
 	// Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
-	var resultsDIV = document.getElementById("results"),
+	var resultsDIV = document.getElementById("results"),//Variables defined and elements are being pulled from the database.
 		searchInput = document.forms[0].search,
 		currentSearch = ''
 	;
@@ -92,7 +92,7 @@
 		;
 		
 		// loop through all the results search() function
-		for(var i=0, j=results.length; i<j; i++){
+		for(var i=0, j=results.length; i<j; i++){//This code will run and check the conditions ran through the loop to determine the length of the user input.
 		
 			// title of video ends with pipe
 			// pull the title's string using index numbers
