@@ -11,4 +11,18 @@
     var playerOneHealth = 100;
     var playerTwoHealth = 100;
 
+    var round = 1;
+
+    function fight(){
+       console.log("In the fight function");
+        alert(playerOneName+":"+playerOneHealth+" *START* "+playerTwoName+":"+playerTwoHealth);
+       for(var i = 0; i < 10; i++){
+          console.log(i);
+       };
+    };
+
+    function winnerCheck(){};
+    console.log("program starts here");
+    fight();
+
 })();
