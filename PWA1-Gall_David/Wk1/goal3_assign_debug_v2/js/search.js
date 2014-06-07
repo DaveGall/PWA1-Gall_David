@@ -55,8 +55,8 @@
                 // is the keyword anywhere in the video title?
                 // If a match is found, push full db[i] into results array
                 var compare = dbitem.indexOf(qitem);//dbItem should be written in camelCase like the variable.
-                if (compare !== -1) {
-                    results.push(db[i]);
+                if (compare !== -1) {//If the variable compare does not equal -1 then run the code on the following line.
+                    results.push(db[i]);//Code to run if the above condition is true.
                 }
 
             } //Missing closing bracket to close off the for loop.
