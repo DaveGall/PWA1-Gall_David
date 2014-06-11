@@ -29,7 +29,7 @@
 		
 		search(query);
 	};
-	
+
 	// Finds search matches
 	var search = function(query){
 		
@@ -45,12 +45,12 @@
             // each db[i] is a single video item, each title ends with a pipe "|"
             // save a lowercase variable of the video title
             var dbTitleEnd = db[i].indexOf('|');
-            var dbitem = db[i].tolowercase().substring(0, dbTitleEnd);
+            var dbitem = db[i].toLowerCase().substring(0, dbTitleEnd);
 
             // loop through the user's search query words
             // save a lowercase variable of the search keyword
             for (var ii = 0, jj = queryArray.length; ii < jj; ii++) {
-                var qitem = queryArray[ii].tolowercase();
+                var qitem = queryArray[ii].toLowerCase();
 
                 // is the keyword anywhere in the video title?
                 // If a match is found, push full db[i] into results array
@@ -66,22 +66,22 @@
 		results.sort();
 		
 		// Check that matches were found, and run output functions
-		if(results.length = 0){
+		if(results.length === 0){
 			noMatch();
 		}else{
 			showMatches(results);
 		};
 	};
-	
+
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
 	var noMatch = function(){
 		var html = ''+
 			'<p>No Results found.</p>'+
-			'<p style="font-size:10px;">Try searching for "JavaScript".  Just an idea.</p>'
-		;
+			'<p style="font-size:10px;">Try searching for "JavaScript".  Just an idea.</p>';
+
 		resultsDIV.innerHTML = html;
 	};
-	
+
 	// Put matches into page as paragraphs with anchors
 	var showMatches = function(results) {
 
