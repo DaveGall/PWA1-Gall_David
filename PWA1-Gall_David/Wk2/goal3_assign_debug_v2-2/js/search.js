@@ -1,3 +1,5 @@
+//David Gall, 06/10/14, Week 2: Develop Search Engine, Debug.
+
 // Create privatized scope using a self-executing function
 (function(){
 	
