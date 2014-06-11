@@ -8,19 +8,19 @@
 	;
 	
 	// Validates search query
-	var validqte = function(query){
+	var validqte = function(query){//This line starts the function that will evaluate the length of your search input.
 		
 		// Trim whitespace from start and end of search query
-		while(query.charAt(0) === " "){
+		while(query.charAt(0) === " "){//This while loop is used to trim the white space from the front of the search text.
 			query = query.substring(1, query.length);
 		};
-		while(query.charAt(query.length-1) === "") {
+		while(query.charAt(query.length-1) === "") {//This is used to trim the end of the search input text.
             query = query.substring(0, query.length - 1);
         };
 		
 		// Check search length, must have 3 characters
-		if(query.length < 3){
-			alert("Your search query is too small, try again.");
+		if(query.length < 3){//This is a parameter of the for loop to check and see if the search text is less than 3.
+			alert("Your search query is too small, try again.");//Alert box that will display if your search input is less than 3 characters.
 			
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
 			searchInput.focus();
