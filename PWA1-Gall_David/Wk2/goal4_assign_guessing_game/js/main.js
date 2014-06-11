@@ -10,5 +10,22 @@
 //Game variables
 (function (){
 
+    var randomNum = Math.floor(Math.random() * 10) + 1;
+    console.log(randomNum);
+
+    var dom = {
+        input: document.querySelector("#input"),
+        output: document.querySelector("#output"),
+        button: document.querySelector("button")
+    };
+
+    var validateInput = function(){
+        playersGuess = parseInt(dom.input.value);
+
+        if(isNaN(playersGuess)){//Put in valid information
+            document.write("Please enter a number!!");
+
+        }
+    };
 
 })();
