@@ -66,24 +66,24 @@
 		results.sort();
 		
 		// Check that matches were found, and run output functions
-		if(results.length === 0){
-			noMatch();
+		if(results.length === 0){//The if statement with an argument of results.length equaling to 0.
+			noMatch();//This will display if the if conditional is true.
 		}else{
-			showMatches(results);
+			showMatches(results);//This will display if the condition is false.
 		};
 	};
 
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
-	var noMatch = function(){
+	var noMatch = function(){//This is the function that will run if you put a query in of 3 or more letters but not java or javascript.
 		var html = ''+
-			'<p>No Results found.</p>'+
+			'<p>No Results found.</p>'+//These two lines display when the function comes back with no matches to the conditions I mentioned in the above comment.
 			'<p style="font-size:10px;">Try searching for "JavaScript".  Just an idea.</p>';
 
-		resultsDIV.innerHTML = html;
+		resultsDIV.innerHTML = html;//I think this will grab the links from the index.html file.
 	};
 
 	// Put matches into page as paragraphs with anchors
-	var showMatches = function(results) {
+	var showMatches = function(results) {//This is the function that will be run when you type in the correct search item.
 
         // THE NEXT 4 LINES ARE CORRECT.
         var html = '<p>Results</p>',
