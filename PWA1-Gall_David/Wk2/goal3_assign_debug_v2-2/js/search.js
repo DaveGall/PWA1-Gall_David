@@ -86,18 +86,18 @@
 	var showMatches = function(results) {//This is the function that will be run when you type in the correct search item.
 
         // THE NEXT 4 LINES ARE CORRECT.
-        var html = '<p>Results</p>',
+        var html = '<p>Results</p>',//The variables for the results from the HTML.
             title,
             url;
 
 		
 		// loop through all the results search() function
-		for(var i=0, j=results.length; i<j; i++){
+		for(var i=0, j=results.length; i<j; i++){//setting a variable for the index to start at 0, j will again be used as the length property for results; i will run as long as it is less than j; i++ is again to add one after each loop to keep it running until the end of j.
 		
 			// title of video ends with pipe
 			// pull the title's string using index numbers
-			titleEnd = results[i].indexOf('|');
-			title = results[i].substring(0, titleEnd);
+			titleEnd = results[i].indexOf('|');//Variable to set the results to grab the titles starting with their ending |.
+			title = results[i].substring(0, titleEnd);//Variable set to use the titleEnd and 0 to get each link.
 			
 			// pull the video url after the title
 			url = results[i].substring(results[i].indexOf('|')+1, results[i].length);
@@ -105,7 +105,7 @@
 			// make the video link - THE NEXT LINE IS CORRECT.
 			html += '<p><a href=' + url + '>' + title + '</a></p>';
 		};
-		resultsDIV.innerHTML = html; //THIS LINE IS CORRECT.
+		resultsDIV.innerHTML = html; //THIS LINE IS CORRECT./This code I believe displays the results in the format that we see on the results page.
 	};
 	
 	// The onsubmit event will be reviewed in upcoming Course Material.
