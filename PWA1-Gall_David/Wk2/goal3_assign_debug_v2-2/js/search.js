@@ -31,7 +31,7 @@
 	};
 
 	// Finds search matches
-	var search = function(query){
+	var search = function(query){//Beginning of a function with a parameter of query set.
 		
 		// split the user's search query string into an array
 		var queryArray = query.split(" ");
@@ -40,23 +40,23 @@
 		var results = [];
 
 		// loop through each index of db array
-		for(var i=0, j=db.length; i<j; i++) {
+		for(var i=0, j=db.length; i<j; i++) {//i=0 variable for the index set at 0, j is set to grab the length of the database being referenced; i is being set to as long as it is less than j to run this loop; i++ to add one after each loop.
 
             // each db[i] is a single video item, each title ends with a pipe "|"
             // save a lowercase variable of the video title
-            var dbTitleEnd = db[i].indexOf('|');
-            var dbitem = db[i].toLowerCase().substring(0, dbTitleEnd);
+            var dbTitleEnd = db[i].indexOf('|');//Sets a variable that will grab each database index by using the | that ends each one.
+            var dbitem = db[i].toLowerCase().substring(0, dbTitleEnd);//Changes each database entry to lowercase so that it can be read correctly.
 
             // loop through the user's search query words
             // save a lowercase variable of the search keyword
-            for (var ii = 0, jj = queryArray.length; ii < jj; ii++) {
-                var qitem = queryArray[ii].toLowerCase();
+            for (var ii = 0, jj = queryArray.length; ii < jj; ii++) {//ii is setting the index at 0, jj is being set to the queryArray's length; ii is being set to run as long as it is less than jj; ii++ is setting it up to add one after each loop.
+                var qitem = queryArray[ii].toLowerCase();//This changes all the items in qitem to all lowercase.
 
                 // is the keyword anywhere in the video title?
                 // If a match is found, push full db[i] into results array
-                var compare = dbitem.indexOf(qitem);
-                if (compare !== -1) {
-                    results.push(db[i]);
+                var compare = dbitem.indexOf(qitem);//The variable that is being set up to be compared with the results.
+                if (compare !== -1) {//An if statement with the parameters of comparing the search with items in the database.
+                    results.push(db[i]);//If true this will give the results.
                 }
 
             }
