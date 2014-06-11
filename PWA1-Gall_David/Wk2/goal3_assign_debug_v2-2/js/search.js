@@ -2,8 +2,8 @@
 (function(){
 	
 	// Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
-	var resultsDIV = document.getElementById("results"),
-		searchInput = document.forms[0].search,
+	var resultsDIV = document.getElementById("results"),//Results from the database for the search query
+		searchInput = document.forms[0].search,//Form for the search page.
 		currentSearch = ''
 	;
 	
@@ -12,10 +12,10 @@
 		
 		// Trim whitespace from start and end of search query
 		while(query.charAt(0) === " "){//This while loop is used to trim the white space from the front of the search text.
-			query = query.substring(1, query.length);
+			query = query.substring(1, query.length);//This is grabbing the string between 1 and the end of the query.
 		};
 		while(query.charAt(query.length-1) === "") {//This is used to trim the end of the search input text.
-            query = query.substring(0, query.length - 1);
+            query = query.substring(0, query.length - 1);//This is grabbing the string from the beginning of the query to the query's length minus 1.
         };
 		
 		// Check search length, must have 3 characters
