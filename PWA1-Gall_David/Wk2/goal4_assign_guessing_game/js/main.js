@@ -18,21 +18,33 @@
         output: document.querySelector("#output"),
         button: document.querySelector("button")
     };
-    //dom.button.onkeydown(validateInput());
-    var validateInput = function(){
-        playersGuess = parseInt(dom.input.value);
+    dom.button.onclick = function() {
 
-        if(isNaN(playersGuess)){//Put in valid information
-            console.log("Please enter a number!!");
+        var validateInput = function () {
+            var playersGuess = parseInt(dom.input.value);
 
-        }if(playersGuess < randomNum){
-            console.log("Your guess is too low!");
-        }if(playersGuess > randomNum){
-            console.log("Your guess is too high!");
-        }else{
-            console.log("You guessed my number");
-        }
+            if (isNaN(playersGuess)) {//Put in valid information
+                result = "Please enter a number.";
+            }
+            if (playersGuess < 1 || playersGuess > 10) {
+                result = "Please enter a valid number.";
+            }
+            if (playersGuess < randomNum) {
+                result = "Your guess is too low!";
+            }
+            if (playersGuess > randomNum) {
+                result = "Your guess is too high!";
+            } else if (playersGuess === randomNum) {
+                result = "You guessed my number";
+            }
+            return result;
+        };
+        console.log(validateInput(randomNum));
     };
+
+    //dom.button.onclick(randomNum);
+//validateInput(9);
+   //var answer = dom.button.onkeydown(validateInput());
 
 })();
 
