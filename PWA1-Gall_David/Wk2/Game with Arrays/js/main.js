@@ -18,7 +18,7 @@
 
     function fight(){//The fight function
        //console.log("In the fight function");//This was a step to check to see if the code path was correct.
-        alert(fighter1[0]+":"+fighter1[2]+" *START* "+fighter2[0]+":"+fighter2[2]);
+        alert(fighter1[0]+":"+fighter1[2]+" *START* "+fighter2[0]+":"+fighter2[2]);//The beginning alert to start the fight.
         //alert(playerOneName+":"+playerOneHealth+" *START* "+playerTwoName+":"+playerTwoHealth);//The beginning alert to start the fight.
        for(var i = 0; i < 10; i++){//Takes the variable i and runs through the loop as long as its below 10.
 
@@ -35,7 +35,7 @@
            //console.log(playerOneName+":"+playerOneHealth+" "+playerTwoName+":"+playerTwoHealth);//This was a print out to see if the code was giving us the results we were looking for.
 
            var results = winnerCheck();//This is a variable that will check to see if there is a winner after each round.
-           console.log(results);
+           console.log(results);//Displays the results to the console.
 
            if(results === "no winner"){//If this condition is true then it will run the next line
                round++;//This will progress the fight another round
