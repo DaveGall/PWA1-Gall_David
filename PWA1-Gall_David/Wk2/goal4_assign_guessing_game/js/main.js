@@ -23,24 +23,27 @@
         var validateInput = function () {
             var playersGuess = parseInt(dom.input.value);
 
+
             if (isNaN(playersGuess)) {//Put in valid information
                 result = "Please enter a number.";
             }
-            if (playersGuess < 1 || playersGuess > 10) {
-                result = "Please enter a valid number.";
+            else if ((playersGuess < 1) || (playersGuess > 10)) {
+                result = "Please enter a number between 1 and 10.";
             }
-            if (playersGuess < randomNum) {
+            else if (playersGuess < randomNum) {
                 result = "Your guess is too low!";
             }
-            if (playersGuess > randomNum) {
+            else if (playersGuess > randomNum) {
                 result = "Your guess is too high!";
             } else if (playersGuess === randomNum) {
-                result = "You guessed my number";
+                result = "You guessed my number!";
             }
             return result;
         };
+
         console.log(validateInput(randomNum));
     };
+
 
     //dom.button.onclick(randomNum);
 //validateInput(9);
