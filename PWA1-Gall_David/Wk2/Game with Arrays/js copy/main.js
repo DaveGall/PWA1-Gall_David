@@ -2,14 +2,16 @@
 
 (function(){
     //Player Names
-    var playerOneName = "Kabal";//Variable for player ones name.
+    var fighter1 = ['Kabul', 20, 100];
+    var fighter2 = ['Kratos', 20, 200];
+    /*var playerOneName = "Kabal";//Variable for player ones name.
     var playerTwoName = "Kratos";//variable for player twos name
     //Player damage
     var player1Damage = 20;//variable for Damage that is inflicted on each player
     var player2Damage = 20;//variable for Damage that is inflicted on each player
     //Player health
     var playerOneHealth = 100;//Variable for the starting health of player one
-    var playerTwoHealth = 100;//Variable for the starting health of player two
+    var playerTwoHealth = 100;//Variable for the starting health of player two*/
 
     var round = 0;//Start on round zero so after the first fight call it says you are done with round one.
 
