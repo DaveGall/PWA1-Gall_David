@@ -10,39 +10,47 @@
 //Game variables
 (function (){
 
-    var randomNum = Math.floor(Math.random() * 10) + 1;
-    console.log(randomNum);
+    var randomNum = Math.floor(Math.random() * 10) + 1;//This line gets a random number between 1 and 10 for each round.
+    console.log(randomNum);//This displays the results of the variable randomNum to make sure I am getting a random number.
 
-    var dom = {
-        input: document.querySelector("#input"),
-        output: document.querySelector("#output"),
-        button: document.querySelector("button")
+    var dom = {//Object
+        input: document.querySelector("#input"),//references the input field of the HTML.
+        output: document.querySelector("#output"),//References the output of the HTML
+        button: document.querySelector("button")//References the button of the HTML.
     };
-    dom.button.onclick = function() {
+    dom.button.onclick = function() {//Beginning of the function that tells the code to press the guess button to display results when clicked.
 
-        var validateInput = function () {
-            var playersGuess = parseInt(dom.input.value);
+        var validateInput = function () {//Beginning of the function that will run the users guess
+            var playersGuess = parseInt(dom.input.value);//Creates a variable for the users guess by pulling the value from the input field.
 
 
             if (isNaN(playersGuess)) {//Put in valid information
                 result = "Please enter a number.";
             }
-            else if ((playersGuess < 1) || (playersGuess > 10)) {
-                result = "Please enter a number between 1 and 10.";
+            else if ((playersGuess < 1) || (playersGuess > 10)) {//If the guess is out of the 1 - 10 range.
+                result = "Please enter a number between 1 and 10.";//This will display if out of range.
             }
-            else if (playersGuess < randomNum) {
-                result = "Your guess is too low!";
+            else if (playersGuess < randomNum) {//If the users guess is too low.
+                result = "Your guess is too low!";//This will display.
             }
-            else if (playersGuess > randomNum) {
-                result = "Your guess is too high!";
-            } else if (playersGuess === randomNum) {
-                result = "You guessed my number!";
+            else if (playersGuess > randomNum) {//If the users guess is too high.
+                result = "Your guess is too high!";//This will display
+            } else if (playersGuess === randomNum) {//If the users guess is right.
+                result = "You guessed my number!";//This will display.
             }
-            return result;
-        };
+            return result;//This will return the result of the correct conditional.
 
-        console.log(validateInput(randomNum));
-    };
+        };
+        alert(validateInput(randomNum));
+        document.getElementById("output");
+
+
+        console.log(validateInput(randomNum));//This line runs the random number through the validateInput function.
+
+     };
+    for(var i = 0, j = 3; i < j; i++){
+
+    }
 
 
     //dom.button.onclick(randomNum);
