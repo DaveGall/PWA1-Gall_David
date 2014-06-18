@@ -16,8 +16,8 @@
     console.log(" ** Fight **");
     var fighter1_txt = document.querySelector("#kabal").querySelector("p");//This line grabs the fighter Kabal and the <p><p> part of his HTML.
     var fighter2_txt = document.querySelector("#kratos").querySelector("p");//This line grabs the fighter Kratos and the <p><p> part of his HTML.
-    var round_txt = document.querySelector("h4");//This grabs the header text above the button for manipulation.
-    var button = document.getElementById("fight_btn");//This grabs the section for the fight button which starts the whole program.
+    var round_txt = document.querySelector("h4");//This grabs the header text above the button from the HTML for manipulation.
+    var button = document.getElementById("fight_btn");//This grabs the section in the HTML for the fight button which starts the whole program.
 
 
     button.addEventListener("click", fight, false);//Sets a listener for the mouse to click on the fight button.
@@ -37,18 +37,18 @@
 
 
     round_txt.innerHTML = "Click FIGHT BUTTON to Start!";//Displays above the fight button and tells you to click the button to start the fight.
-    fighter1_txt.innerHTML = fighters[0].name+":"+fighters[0].health;//This displays the fighters name and beginning health above them on the screen.
+    fighter1_txt.innerHTML = fighters[0].name+":"+fighters[0].health;//This displays on the HTML the fighters name and beginning health above them on the screen.
     fighter2_txt.innerHTML = fighters[1].name+":"+fighters[1].health;
 
     var round = 1;//Start on round zero so after the first fight call it says you are done with round one.
 
-    function onClick(){
+    function onClick(){//This is the function that starts the fight on the click of the fight button.
         fight();
     }
 
     function fight() {//The fight function
 
-        fighter1_txt.innerHTML = fighters[0].name + ":" + fighters[0].health;
+        fighter1_txt.innerHTML = fighters[0].name + ":" + fighters[0].health;//This displays on the HTML the fighters name and beginning health above them on the screen.
         fighter2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
         //alert(fighter1[0]+":"+fighter1[2]+" *START* "+fighter2[0]+":"+fighter2[2]);//The beginning alert to start the fight.
         //alert(playerOneName+":"+playerOneHealth+" *START* "+playerTwoName+":"+playerTwoHealth);//The beginning alert to start the fight.
@@ -64,13 +64,13 @@
 
 
         var results = winnerCheck();//This is a variable that will check to see if there is a winner after each round.
-        round_txt.innerHTML = "ROUND NUMBER "+round+" Results";
-        console.log("Round Number: "+round);
+        round_txt.innerHTML = "ROUND NUMBER "+round+" Results";//This will write the round number to the HTML using the innerHTML to change the display after each round.
+        console.log("Round Number: "+round);//This code will display the results in the console section of the website for viewing.
         round++;
 
          if(results === "no winner"){//If this condition is true then it will run the next line
-         fighter1_txt.innerHTML = fighters[0].name+":"+fighters[0].health;
-         fighter2_txt.innerHTML = fighters[1].name+":"+fighters[1].health;
+         fighter1_txt.innerHTML = fighters[0].name+":"+fighters[0].health;//Writes the name and score after each round in the HTML above each fighter.
+         fighter2_txt.innerHTML = fighters[1].name+":"+fighters[1].health;//Writes the name and score after each round in the HTML above each fighter.
              //round_txt.innerHTML = "Round "+ round+" complete";
             console.log(fighters[0].name+":"+fighters[0].health);
             console.log(fighters[1].name+":"+fighters[1].health);
