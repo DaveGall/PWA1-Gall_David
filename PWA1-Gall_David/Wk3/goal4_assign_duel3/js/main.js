@@ -18,6 +18,7 @@
     var fighter2_txt = document.querySelector("#kratos").querySelector("p");
     var round_txt = document.querySelector("h4");
     var button = document.getElementById("fight_btn");
+    var buttonDisable = document.getElementById("fight_btn").disabled=true;
 
     button.addEventListener("click", fight, false);
 
@@ -34,13 +35,15 @@
         }
     ];
 
+
     round_txt.innerHTML = "Click FIGHT BUTTON to Start!";
     fighter1_txt.innerHTML = fighters[0].name+":"+fighters[0].health;
     fighter2_txt.innerHTML = fighters[1].name+":"+fighters[1].health;
 
     var round = 0;//Start on round zero so after the first fight call it says you are done with round one.
+
     function onClick(){
-        fight()
+        fight();
     }
 
     function fight() {//The fight function
@@ -59,20 +62,25 @@
         fighters[1].health -= f2;//This subtracts the players health by the amount of damage from the prior variables
 
 
-console.log(results);
+
         var results = winnerCheck();//This is a variable that will check to see if there is a winner after each round.
+        round_txt.innerHTML = "ROUND NUMBER "+round+" Results";
+        round++;
 
          if(results === "no winner"){//If this condition is true then it will run the next line
-         round++;//This will progress the fight another round
-         //alert(fighter1[0]+":"+fighter1[2]+" *ROUND "+round+" OVER* "+fighter2[0]+":"+fighter2[2]);//Displays the results after each round.
-             round_txt.innerHTML = "Round "+ round+" complete";
-             console.log("Round: "+ round);
+         fighter1_txt.innerHTML = fighters[0].name+":"+fighters[0].health;
+         fighter2_txt.innerHTML = fighters[1].name+":"+fighters[1].health;
+             //round_txt.innerHTML = "Round "+ round+" complete";
+            // console.log("Round: "+ round);
 
          }else{//This else statement will display the results once the if statement is false and there is a winner.
+             fighter1_txt.innerHTML = results;
+             fighter2_txt.innerHTML = "";
              round_txt.innerHTML = results;
              console.log(results);
 
          }
+
 
 
 
@@ -82,16 +90,20 @@ console.log(results);
 
 
             if (fighters[0].health < 1 && fighters[1].health < 1) {//If this condition is true then the following result will display.
-                result = "You both die";//Display if above code is true
+                result = "YOU BOTH DIE!!";//Display if above code is true
+
             } else if (fighters[0].health < 1) {//If this condition is true then the code below will display
                 result = fighters[1].name + " WINS!!!";//Code to display if the results of the above condition are true.
 
+
             } else if (fighters[1].health < 1) {//Condition to check to see if all the other conditions returned false then this will display.
                 result = fighters[0].name + " WINS!!!";//Code that displays if the above statement is true.
+
             }
             return result;//Returns a value for the results of the function.
-        };
+        }
     }
+
 
 
 })();//End of program.
