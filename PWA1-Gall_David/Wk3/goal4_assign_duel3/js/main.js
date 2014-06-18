@@ -41,19 +41,19 @@
     var round = 0;//Start on round zero so after the first fight call it says you are done with round one.
 
     function fight() {//The fight function
-        fighter1_txt.innerHTML = fighters[0].name+":"+fighters[0].health;
-        fighter2_txt.innerHTML = fighters[1].name+":"+fighters[1].health;
+        fighter1_txt.innerHTML = fighters[0].name + ":" + fighters[0].health;
+        fighter2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
         //alert(fighter1[0]+":"+fighter1[2]+" *START* "+fighter2[0]+":"+fighter2[2]);//The beginning alert to start the fight.
         //alert(playerOneName+":"+playerOneHealth+" *START* "+playerTwoName+":"+playerTwoHealth);//The beginning alert to start the fight.
         var minDamage1 = fighters[0].damage * .5;//Variable equation for the damage to each player.
         var minDamage2 = fighters[1].damage * .5;//Variable equation for the damage to each player.
-        var f1 = Math.floor(Math.random() * (fighters[0].damage - minDamage1) + minDamage1);//Variable to determine a random number to subtract from each player at the end of each round.
+        /*var f1 = Math.floor(Math.random() * (fighters[0].damage - minDamage1) + minDamage1);//Variable to determine a random number to subtract from each player at the end of each round.*/
+        var f1 = Math.floor(Math.random() * fighters[0].damage + fighters[0].damage * .5);
         var f2 = Math.floor(Math.random() * (fighters[1].damage - minDamage2) + minDamage2);//Variable to determine a random number to subtract from each player at the end of each round.
 
-        
-        fighters[0].health-=f1;//This subtracts the players health by the amount of damage from the prior variables.
-        fighters[1].health-=f2;//This subtracts the players health by the amount of damage from the prior variables
 
+        fighters[0].health -= f1;//This subtracts the players health by the amount of damage from the prior variables.
+        fighters[1].health -= f2;//This subtracts the players health by the amount of damage from the prior variables
 
 
         /*   for(var i = 0; i < 10; i++){//Takes the variable i and runs through the loop as long as its below 10.
@@ -79,16 +79,17 @@
             console.log("in winnerCheck FN");
             var result = "no winner";//Variable to display the results of this function
 
-            if (fighter1[2] < 1 && fighter2 < 1) {//If this condition is true then the following result will display.
+            if (fighters[0].health < 1 && fighters[1].health < 1) {//If this condition is true then the following result will display.
                 result = "You both die";//Display if above code is true
-            } else if (fighter1[2] < 1) {//If this condition is true then the code below will display
-                result = fighter2[0] + " WINS!!!";//Code to display if the results of the above condition are true.
-            } else if (fighter2[2] < 1) {//Condition to check to see if all the other conditions returned false then this will display.
-                result = fighter1[0] + " WINS!!!";//Code that displays if the above statement is true.
+            } else if (fighters[0].health < 1) {//If this condition is true then the code below will display
+                result = fighters[1].name + " WINS!!!";//Code to display if the results of the above condition are true.
+            } else if (fighters[1].health < 1) {//Condition to check to see if all the other conditions returned false then this will display.
+                result = fighters[0].name + " WINS!!!";//Code that displays if the above statement is true.
             }
             return result;//Returns a value for the results of the function.
         };
+    }
         //console.log("program starts here");
         fight();//Runs the function for fight.
-    }
+
 })();//End of program.
