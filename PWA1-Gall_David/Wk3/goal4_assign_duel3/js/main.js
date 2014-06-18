@@ -1,4 +1,4 @@
-//David Gall, 06/17/2014, Dual Part2
+//David Gall, 06/17/2014, Dual Part3
 
 (function(){
 
@@ -20,24 +20,24 @@
     var button = document.getElementById("fight_btn");//This grabs the section for the fight button which starts the whole program.
 
 
-    button.addEventListener("click", fight, false);
+    button.addEventListener("click", fight, false);//Sets a listener for the mouse to click on the fight button.
 
-    var fighters = [
+    var fighters = [//Array of objects that will be used to grab the fighters information throughout the code.
         {
             name: "Kabul",
-            damage: 20,
+            damage: 20,//Kabul's information, name, damage and health.
             health: 100
         },
         {
             name: "Kratos",
-            damage: 20,
+            damage: 20,//Kratos's information, name, damage and health.
             health: 100
         }
     ];
 
 
-    round_txt.innerHTML = "Click FIGHT BUTTON to Start!";
-    fighter1_txt.innerHTML = fighters[0].name+":"+fighters[0].health;
+    round_txt.innerHTML = "Click FIGHT BUTTON to Start!";//Displays above the fight button and tells you to click the button to start the fight.
+    fighter1_txt.innerHTML = fighters[0].name+":"+fighters[0].health;//This displays the fighters name and beginning health above them on the screen.
     fighter2_txt.innerHTML = fighters[1].name+":"+fighters[1].health;
 
     var round = 1;//Start on round zero so after the first fight call it says you are done with round one.
