@@ -18,7 +18,7 @@
     var fighter2_txt = document.querySelector("#kratos").querySelector("p");
     var round_txt = document.querySelector("h4");
     var button = document.getElementById("fight_btn");
-    
+
 
     button.addEventListener("click", fight, false);
 
@@ -40,7 +40,7 @@
     fighter1_txt.innerHTML = fighters[0].name+":"+fighters[0].health;
     fighter2_txt.innerHTML = fighters[1].name+":"+fighters[1].health;
 
-    var round = 0;//Start on round zero so after the first fight call it says you are done with round one.
+    var round = 1;//Start on round zero so after the first fight call it says you are done with round one.
 
     function onClick(){
         fight();
