@@ -14,8 +14,8 @@
     //var fighter1 = ['Kabul', 20, 100];//Assigns player ones name, damage, and starting health.
     //var fighter2 = ['Kratos', 20, 100];//Assigns player twos name, damage and starting health.
     console.log(" ** Fight **");
-    var fighter1_txt = document.querySelector("#scores").querySelector("kabal");
-    var fighter2_txt = document.querySelector("#scores").querySelector("kratos");
+    var fighter1_txt = document.querySelector("#kabal").querySelector("p");
+    var fighter2_txt = document.querySelector("#kratos").querySelector("p");
     var round_txt = document.querySelector("h4");
     var button = document.getElementById("fight_btn");
 
@@ -40,53 +40,52 @@
 
     var round = 0;//Start on round zero so after the first fight call it says you are done with round one.
 
-    function fight(){//The fight function
-       //console.log("In the fight function");//This was a step to check to see if the code path was correct.
+    function fight() {//The fight function
+        
         //alert(fighter1[0]+":"+fighter1[2]+" *START* "+fighter2[0]+":"+fighter2[2]);//The beginning alert to start the fight.
         //alert(playerOneName+":"+playerOneHealth+" *START* "+playerTwoName+":"+playerTwoHealth);//The beginning alert to start the fight.
-        var f1 = Math.floor(Math.random()*(fighter1[1]-minDamage1)+minDamage1);//Variable to determine a random number to subtract from each player at the end of each round.
-        var f2 = Math.floor(Math.random()*(fighter2[1]-minDamage2)+minDamage2);//Variable to determine a random number to subtract from each player at the end of each round.
-    /*   for(var i = 0; i < 10; i++){//Takes the variable i and runs through the loop as long as its below 10.
-
-           var minDamage1 = fighter1[1] * .5;//Variable equation for the damage to each player.
-           var minDamage2 = fighter2[1] * .5;//Variable equation for the damage to each player.
-
-          
+        var f1 = Math.floor(Math.random() * (fighter1[1] - minDamage1) + minDamage1);//Variable to determine a random number to subtract from each player at the end of each round.
+        var f2 = Math.floor(Math.random() * (fighter2[1] - minDamage2) + minDamage2);//Variable to determine a random number to subtract from each player at the end of each round.
+        var minDamage1 = fighter1[1] * .5;//Variable equation for the damage to each player.
+        var minDamage2 = fighter2[1] * .5;//Variable equation for the damage to each player.
+        fighter1[2]-=f1;//This subtracts the players health by the amount of damage from the prior variables.
+        fighter2[2]-=f2;//This subtracts the players health by the amount of damage from the prior variables
 
 
-           fighter1[2]-=f1;//This subtracts the players health by the amount of damage from the prior variables.
-           fighter2[2]-=f2;//This subtracts the players health by the amount of damage from the prior variables.
-           console.log(fighter1[0]+":"+fighter1[2]+" "+fighter2[0]+":"+fighter2[2]);
-           //console.log(playerOneName+":"+playerOneHealth+" "+playerTwoName+":"+playerTwoHealth);//This was a print out to see if the code was giving us the results we were looking for.
 
-           var results = winnerCheck();//This is a variable that will check to see if there is a winner after each round.
-           console.log(results);//Displays the results to the console.
+        /*   for(var i = 0; i < 10; i++){//Takes the variable i and runs through the loop as long as its below 10.
 
-           if(results === "no winner"){//If this condition is true then it will run the next line
-               round++;//This will progress the fight another round
-               alert(fighter1[0]+":"+fighter1[2]+" *ROUND "+round+" OVER* "+fighter2[0]+":"+fighter2[2]);//Displays the results after each round.
+         console.log(fighter1[0]+":"+fighter1[2]+" "+fighter2[0]+":"+fighter2[2]);
+         //console.log(playerOneName+":"+playerOneHealth+" "+playerTwoName+":"+playerTwoHealth);//This was a print out to see if the code was giving us the results we were looking for.
 
-           }else{//This else statement will display the results once the if statement is false and there is a winner.
-               alert(results);//Will display the results
-               break;//stops the code from running once there is a winner.
-           };
-       };
-    };*/
+         var results = winnerCheck();//This is a variable that will check to see if there is a winner after each round.
+         console.log(results);//Displays the results to the console.
 
-    function winnerCheck(){//This code is to determine the parameters of how a winner is crowned.
-        console.log("in winnerCheck FN");
-        var result = "no winner";//Variable to display the results of this function
+         if(results === "no winner"){//If this condition is true then it will run the next line
+         round++;//This will progress the fight another round
+         alert(fighter1[0]+":"+fighter1[2]+" *ROUND "+round+" OVER* "+fighter2[0]+":"+fighter2[2]);//Displays the results after each round.
 
-        if(fighter1[2] < 1 && fighter2 < 1){//If this condition is true then the following result will display.
-            result = "You both die";//Display if above code is true
-        }else if(fighter1[2] < 1){//If this condition is true then the code below will display
-            result = fighter2[0]+" WINS!!!";//Code to display if the results of the above condition are true.
-        }else if(fighter2[2] < 1){//Condition to check to see if all the other conditions returned false then this will display.
-            result = fighter1[0]+" WINS!!!";//Code that displays if the above statement is true.
-        }
-        return result;//Returns a value for the results of the function.
-    };
-    //console.log("program starts here");
-    fight();//Runs the function for fight.
+         }else{//This else statement will display the results once the if statement is false and there is a winner.
+         alert(results);//Will display the results
+         break;//stops the code from running once there is a winner.
+         };
+         };
+         };*/
 
+        function winnerCheck() {//This code is to determine the parameters of how a winner is crowned.
+            console.log("in winnerCheck FN");
+            var result = "no winner";//Variable to display the results of this function
+
+            if (fighter1[2] < 1 && fighter2 < 1) {//If this condition is true then the following result will display.
+                result = "You both die";//Display if above code is true
+            } else if (fighter1[2] < 1) {//If this condition is true then the code below will display
+                result = fighter2[0] + " WINS!!!";//Code to display if the results of the above condition are true.
+            } else if (fighter2[2] < 1) {//Condition to check to see if all the other conditions returned false then this will display.
+                result = fighter1[0] + " WINS!!!";//Code that displays if the above statement is true.
+            }
+            return result;//Returns a value for the results of the function.
+        };
+        //console.log("program starts here");
+        fight();//Runs the function for fight.
+    }
 })();//End of program.
