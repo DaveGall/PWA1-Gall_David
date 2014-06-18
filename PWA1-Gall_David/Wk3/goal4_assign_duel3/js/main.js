@@ -14,10 +14,10 @@
     //var fighter1 = ['Kabul', 20, 100];//Assigns player ones name, damage, and starting health.
     //var fighter2 = ['Kratos', 20, 100];//Assigns player twos name, damage and starting health.
     console.log(" ** Fight **");
-    var fighter1_txt = document.querySelector("#kabal").querySelector("p");
-    var fighter2_txt = document.querySelector("#kratos").querySelector("p");
-    var round_txt = document.querySelector("h4");
-    var button = document.getElementById("fight_btn");
+    var fighter1_txt = document.querySelector("#kabal").querySelector("p");//This line grabs the fighter Kabal and the <p><p> part of his HTML.
+    var fighter2_txt = document.querySelector("#kratos").querySelector("p");//This line grabs the fighter Kratos and the <p><p> part of his HTML.
+    var round_txt = document.querySelector("h4");//This grabs the header text above the button for manipulation.
+    var button = document.getElementById("fight_btn");//This grabs the section for the fight button which starts the whole program.
 
 
     button.addEventListener("click", fight, false);
@@ -75,12 +75,13 @@
             console.log(fighters[0].name+":"+fighters[0].health);
             console.log(fighters[1].name+":"+fighters[1].health);
 
-         }else{//This else statement will display the results once the if statement is false and there is a winner.
+         }else {//This else statement will display the results once the if statement is false and there is a winner.
              fighter1_txt.innerHTML = results;
-             fighter2_txt.innerHTML = "";
+             fighter2_txt.innerHTML = results;
              round_txt.innerHTML = results;
              button.removeEventListener("click", fight, false);
              document.querySelector('.buttonblue').innerHTML = "GAME OVER!!";
+
              console.log(results);
 
          }
