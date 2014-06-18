@@ -72,17 +72,17 @@
          fighter1_txt.innerHTML = fighters[0].name+":"+fighters[0].health;//Writes the name and score after each round in the HTML above each fighter.
          fighter2_txt.innerHTML = fighters[1].name+":"+fighters[1].health;//Writes the name and score after each round in the HTML above each fighter.
              //round_txt.innerHTML = "Round "+ round+" complete";
-            console.log(fighters[0].name+":"+fighters[0].health);
-            console.log(fighters[1].name+":"+fighters[1].health);
+            console.log(fighters[0].name+":"+fighters[0].health);//Writes the above results to the console for viewing.
+            console.log(fighters[1].name+":"+fighters[1].health);//Writes the above results to the console for viewing.
 
          }else {//This else statement will display the results once the if statement is false and there is a winner.
-             fighter1_txt.innerHTML = results;
-             fighter2_txt.innerHTML = results;
-             round_txt.innerHTML = results;
-             button.removeEventListener("click", fight, false);
-             document.querySelector('.buttonblue').innerHTML = "GAME OVER!!";
+             fighter1_txt.innerHTML = results;//This will write the results to the HTML page and display the results above each player.
+             fighter2_txt.innerHTML = results;//This will write the results to the HTML page and display the results above each player.
+             round_txt.innerHTML = results;//This will write the results above the fight button by manipulating the inner HTML.
+             button.removeEventListener("click", fight, false);//This bit of code removes the listener code for the active button and makes it inactive.
+             document.querySelector('.buttonblue').innerHTML = "GAME OVER!!";//This bit changes the fight text inside the fight button to GAME OVER! to signal that there was a winner.
 
-             console.log(results);
+             console.log(results);//This writes the results to the console for viewing.
 
          }
 
