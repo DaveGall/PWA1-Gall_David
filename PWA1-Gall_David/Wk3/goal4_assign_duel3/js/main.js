@@ -41,11 +41,12 @@
     var round = 0;//Start on round zero so after the first fight call it says you are done with round one.
 
     function fight() {//The fight function
-        
+        fighter1_txt.innerHTML = fighters[0].name+":"+fighters[0].health;
+        fighter2_txt.innerHTML = fighters[1].name+":"+fighters[1].health;
         //alert(fighter1[0]+":"+fighter1[2]+" *START* "+fighter2[0]+":"+fighter2[2]);//The beginning alert to start the fight.
         //alert(playerOneName+":"+playerOneHealth+" *START* "+playerTwoName+":"+playerTwoHealth);//The beginning alert to start the fight.
-        var f1 = Math.floor(Math.random() * (fighter1[1] - minDamage1) + minDamage1);//Variable to determine a random number to subtract from each player at the end of each round.
-        var f2 = Math.floor(Math.random() * (fighter2[1] - minDamage2) + minDamage2);//Variable to determine a random number to subtract from each player at the end of each round.
+        var f1 = Math.floor(Math.random() * (fighters[0].damage - minDamage1) + minDamage1);//Variable to determine a random number to subtract from each player at the end of each round.
+        var f2 = Math.floor(Math.random() * (fighters[1].damage - minDamage2) + minDamage2);//Variable to determine a random number to subtract from each player at the end of each round.
         var minDamage1 = fighter1[1] * .5;//Variable equation for the damage to each player.
         var minDamage2 = fighter2[1] * .5;//Variable equation for the damage to each player.
         fighter1[2]-=f1;//This subtracts the players health by the amount of damage from the prior variables.
