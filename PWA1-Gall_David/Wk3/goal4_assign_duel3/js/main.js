@@ -65,19 +65,22 @@
 
         var results = winnerCheck();//This is a variable that will check to see if there is a winner after each round.
         round_txt.innerHTML = "ROUND NUMBER "+round+" Results";
+        console.log("Round Number: "+round);
         round++;
 
          if(results === "no winner"){//If this condition is true then it will run the next line
          fighter1_txt.innerHTML = fighters[0].name+":"+fighters[0].health;
          fighter2_txt.innerHTML = fighters[1].name+":"+fighters[1].health;
              //round_txt.innerHTML = "Round "+ round+" complete";
-            // console.log("Round: "+ round);
+            console.log(fighters[0].name+":"+fighters[0].health);
+            console.log(fighters[1].name+":"+fighters[1].health);
 
          }else{//This else statement will display the results once the if statement is false and there is a winner.
              fighter1_txt.innerHTML = results;
              fighter2_txt.innerHTML = "";
              round_txt.innerHTML = results;
              button.removeEventListener("click", fight, false);
+             document.querySelector('.buttonblue').innerHTML = "GAME OVER!!";
              console.log(results);
 
          }
