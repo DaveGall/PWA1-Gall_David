@@ -18,7 +18,7 @@
     var fighter2_txt = document.querySelector("#kratos").querySelector("p");
     var round_txt = document.querySelector("h4");
     var button = document.getElementById("fight_btn");
-    var buttonDisable = document.getElementById("fight_btn").disabled=true;
+    
 
     button.addEventListener("click", fight, false);
 
@@ -77,6 +77,7 @@
              fighter1_txt.innerHTML = results;
              fighter2_txt.innerHTML = "";
              round_txt.innerHTML = results;
+             button.removeEventListener("click", fight, false);
              console.log(results);
 
          }
