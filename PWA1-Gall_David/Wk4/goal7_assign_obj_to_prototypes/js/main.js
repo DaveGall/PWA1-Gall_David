@@ -21,6 +21,9 @@ var randomRows = rows[Math.floor(Math.random() * rows.length)];
     for (var i = 0; i < numPeeps; i++) {//Cycles through and chooses only three names from my names list.
         var newPeeps = Math.floor(Math.random() * names.length);
         var person = new Person(names[newPeeps], i+1);
+
+        populateHTML(person.name, "r"+(i+1)+"c1");
+        populateHTML(person.job, "r"+(i+1)+"c2");
         people.push(names[newPeeps]);
         names.splice(newPeeps, 1);
     }
