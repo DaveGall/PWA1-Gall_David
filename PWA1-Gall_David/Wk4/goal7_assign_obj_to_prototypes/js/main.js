@@ -29,7 +29,7 @@
     clearInterval(interval);//This clears the interval.
     interval = setInterval(runUpdate, 10000 / 30);//This line sets up the interval at which the function will update.
 
-    function populateHTML(date, field) {//This function that will run when called by populateHTML
+    function populateHTML(date, field) {//This is the function that will run when called with populateHTML
         var id = document.getElementById(field);//This grabs the second parameter passed through the function from the HTML document.
         id.innerHTML = date;//This line writes the new information to the HTML
 
