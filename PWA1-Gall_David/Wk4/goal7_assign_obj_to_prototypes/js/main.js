@@ -7,9 +7,10 @@
 (function() {
 
     console.log("This is main.js");
-    var numPeeps = 3;
-    var people = [];
-    var names = ["Dave", "Maria", "Bill", "Jill", "Larry"];
+
+    var numPeeps = 3;//variable that sets the number of people to display at 3.
+    var people = [];//Array to store the results of the for loop below.
+    var names = ["Dave", "Maria", "Bill", "Jill", "Larry"];//name array that the for loop will pull from.
     var interval;
 
 
